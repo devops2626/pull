@@ -10,17 +10,50 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4    # v4 is more stable than v7 (v7 may not exist yet)
+      
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'               # speeds up installs
+      
+      - run: npm ci                  # faster, stricter than npm install
+      - run: npm test
+name: CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
       - uses: actions/checkout@v7
       # Add steps to install your dependencies and run tests
       # Example for Node.js:
       - uses: actions/setup-node@v7
+      - uses: actions/setupname: CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+permissions:
+  contents: read   # minimal permissions
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: '18'
-      - run: npm install
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
       - run: npm test
-      # Example for Python:
-      # - uses: actions/setup-python@v4
-      #   with:
-      #     python-version: '3.10'
-      # - run: pip install -r requirements.txt
-      # - run: pytest
