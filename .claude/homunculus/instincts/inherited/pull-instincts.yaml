@@ -1,0 +1,366 @@
+# Instincts generated from https://github.com/devops2626/pull
+# Generated: 2026-07-19T18:34:50.647Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: pull-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/devops2626/pull
+---
+
+# Pull Commit Length
+
+## Action
+
+Write moderate-length commit messages (~53 characters)
+
+## Evidence
+
+- Average commit message length: 53 chars
+- Based on 6 commits
+
+---
+id: pull-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/devops2626/pull
+---
+
+# Pull Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: pull-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/devops2626/pull
+---
+
+# Pull Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: pull-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/devops2626/pull
+---
+
+# Pull Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: pull-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/devops2626/pull
+---
+
+# Pull Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: pull-workflow-update-github-actions-workflow
+trigger: "when doing update github actions workflow"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/devops2626/pull
+---
+
+# Pull Workflow Update Github Actions Workflow
+
+## Action
+
+Follow the update-github-actions-workflow workflow:
+1. Edit .github/workflows/ci.yml to update action versions or workflow configuration.
+2. Commit the changes with a message referencing the update (e.g., bumping a dependency).
+3. Optionally, merge or pull in related changes from master/main.
+4. Merge the pull request or push to main branch.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: .github/workflows/ci.yml
+
+---
+id: pull-workflow-merge-dependency-update-branch
+trigger: "when doing merge dependency update branch"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/devops2626/pull
+---
+
+# Pull Workflow Merge Dependency Update Branch
+
+## Action
+
+Follow the merge-dependency-update-branch workflow:
+1. Review the dependency update PR (often includes .github/workflows/ci.yml).
+2. Merge the branch into the main branch.
+3. Resolve any conflicts if necessary.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: .github/workflows/ci.yml
+
+---
+id: pull-coding-convention-file-naming
+trigger: "When creating or renaming a file in the codebase"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: devops2626/pull
+---
+
+# Pull Coding Convention File Naming
+
+## Action
+
+Name the file using camelCase convention
+
+## Evidence
+
+- Pattern in namingConventions.files: camelCase
+
+---
+id: pull-coding-convention-function-naming
+trigger: "When defining a function"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: devops2626/pull
+---
+
+# Pull Coding Convention Function Naming
+
+## Action
+
+Name the function using camelCase convention
+
+## Evidence
+
+- Pattern in namingConventions.functions: camelCase
+
+---
+id: pull-coding-convention-class-naming
+trigger: "When defining a class"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: devops2626/pull
+---
+
+# Pull Coding Convention Class Naming
+
+## Action
+
+Name the class using PascalCase convention
+
+## Evidence
+
+- Pattern in namingConventions.classes: PascalCase
+
+---
+id: pull-coding-convention-constant-naming
+trigger: "When defining a constant"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: devops2626/pull
+---
+
+# Pull Coding Convention Constant Naming
+
+## Action
+
+Name the constant using SCREAMING_SNAKE_CASE convention
+
+## Evidence
+
+- Pattern in namingConventions.constants: SCREAMING_SNAKE_CASE
+
+---
+id: pull-coding-convention-import-style
+trigger: "When importing modules"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: devops2626/pull
+---
+
+# Pull Coding Convention Import Style
+
+## Action
+
+Use relative import paths
+
+## Evidence
+
+- Pattern in importStyle: relative
+
+---
+id: pull-coding-convention-export-style
+trigger: "When exporting modules or functions"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: devops2626/pull
+---
+
+# Pull Coding Convention Export Style
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in exportStyle: named
+
+---
+id: pull-testing-pattern-location
+trigger: "When adding new tests"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: devops2626/pull
+---
+
+# Pull Testing Pattern Location
+
+## Action
+
+Place test files in a separate directory from source code
+
+## Evidence
+
+- Pattern in architecture.testLocation: separate
+
+---
+id: pull-git-commit-prefix-chore
+trigger: "When making a commit for maintenance, CI, or config changes"
+confidence: 0.8
+domain: git
+source: repo-analysis
+source_repo: devops2626/pull
+---
+
+# Pull Git Commit Prefix Chore
+
+## Action
+
+Prefix the commit message with 'chore:'
+
+## Evidence
+
+- Seen in commit: 'chore: update CI to modern standards + README'
+
+---
+id: pull-git-commit-format-merge
+trigger: "When merging a pull request or branch"
+confidence: 0.7
+domain: git
+source: repo-analysis
+source_repo: devops2626/pull
+---
+
+# Pull Git Commit Format Merge
+
+## Action
+
+Use commit messages starting with 'Merge pull request' or 'Merge branch'
+
+## Evidence
+
+- Seen in commits: 'Merge pull request #3 from ...', 'Merge branch ...'
+
+---
+id: pull-workflow-update-github-actions
+trigger: "When CI dependencies or workflow settings need updating (e.g., bumping actions/setup-node version)"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: devops2626/pull
+---
+
+# Pull Workflow Update Github Actions
+
+## Action
+
+Edit .github/workflows/ci.yml, commit with a message referencing the update, and merge or push to main
+
+## Evidence
+
+- Workflow: update-github-actions-workflow
+- Seen in commit: 'Bump actions/setup-node from 3 to 7'
+
+---
+id: pull-workflow-merge-dependency-update
+trigger: "When a dependency update PR from an automated tool is ready to be merged"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: devops2626/pull
+---
+
+# Pull Workflow Merge Dependency Update
+
+## Action
+
+Review the PR, merge the branch into main, and resolve conflicts if necessary
+
+## Evidence
+
+- Workflow: merge-dependency-update-branch
+- Seen in commits: 'Merge pull request #2 from ...', 'Merge branch ...'
+
