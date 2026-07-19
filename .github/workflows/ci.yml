@@ -10,7 +10,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v7
       # Add steps to install your dependencies and run tests
       # Example for Node.js:
       - uses: actions/setup-node@v3
