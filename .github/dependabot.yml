@@ -1,0 +1,24 @@
+version: 2
+updates:
+  # Example for npm (Node.js) - change or add more as needed
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: "chore(deps)"
+    reviewers:
+      - "your-username"   # optional
+
+  # Example for pip (Python)
+  # - package-ecosystem: "pip"
+  #   directory: "/"
+  #   schedule:
+  #     interval: "weekly"
+
+  # Example for GitHub Actions itself
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
